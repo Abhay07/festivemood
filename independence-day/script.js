@@ -13,7 +13,8 @@ if(splits && splits[1]){
 }
 else{
 	hideName();
-	shareIcon.href = `whatsapp://send?text=🇮🇳Here's a special Independent Day Wish from me 🇮🇳 ${url}`
+	const msg = encodeURIComponent(`🇮🇳Here's a special Independent Day Wish from me 🇮🇳 ${url}`);
+	shareIcon.href = `whatsapp://send?text=${msg}`
 }
 function playAudio(){
 	const audio = document.querySelector('audio');
@@ -32,7 +33,8 @@ function setName(e){
 	const name = e.target.value;
 	userName.innerHTML = name;
 	const url = window.location.href;
-	shareIcon.href = `whatsapp://send?text=🇮🇳 Here's a special Independent Day Wish from me 🇮🇳 ${url}?name=${name}`
+	const msg = encodeURIComponent(`🇮🇳 Here's a special Independent Day Wish from me 🇮🇳 ${url}?name=${name}`);
+	shareIcon.href = `whatsapp://send?text=${msg}`;
 }
 
 function hideName() {
