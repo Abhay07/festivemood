@@ -7,7 +7,7 @@ if(splits && splits[1]){
 	const name = decodeURIComponent(splits[1]);
 	setName({
 		target:{
-			value:name
+			value:decodeName(name)
 		}
 	})
 }
@@ -28,11 +28,13 @@ function playAudio(){
 }
 
 function setName(e){
-	showName();
+	if(userName.style.display == 'none'){
+		showName();
+	}
 	const name = e.target.value;
 	userName.innerHTML = name;
-	const url = window.location.href;
-	shareIcon.href = `whatsapp://send?text=🇮🇳 Here's a special Independent Day Wish from me 🇮🇳 ${url}?name=${encodeURIComponent(name)}`
+	const url = window.location.origin+'/independence-day';
+	shareIcon.href = `whatsapp://send?text=🇮🇳 Here's a special Independent Day Wish from me 🇮🇳 ${url}?name=${encodeName(name)}`
 }
 
 function hideName() {
@@ -43,4 +45,12 @@ function hideName() {
 function showName(){
 	userName.style.display = 'inline-block';
 	wishText.style.display = 'inline-block';
+}
+
+function encodeName(t){
+	return t.replace(' ','-');
+}
+
+function decodeName(t){
+	return t.replace('-',' ');
 }
