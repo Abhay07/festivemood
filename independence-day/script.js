@@ -117,6 +117,6 @@ function changeLanguage(e){
 }
 
 function share(e){
-	const msg = `whatsapp://send?text=🇮🇳 ${languageJson[language].msg} 🇮🇳 ${window.location.origin}?name=${encodeName(userInput.value)}${encodeURIComponent('&')}lang=${language}`;
+	const msg = `whatsapp://send?text=🇮🇳 ${languageJson[language].msg} 🇮🇳 ${window.location.origin}/independence-day/?name=${encodeName(userInput.value)}${encodeURIComponent('&')}lang=${language}`;
 	e.target.href = msg;
 }
