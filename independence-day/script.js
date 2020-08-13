@@ -45,8 +45,7 @@ const wishText = document.querySelector("#wishText");
 const shareIcon = document.querySelector("#shareIcon");
 const indText = document.querySelector("#ind");
 const url = window.location.href;
-const splits = url.split('?name=');
-const langSplits = url.split('lang=');
+const splits = url.split(/\?name=|&lang=/);
 const languageSelect = document.querySelector('select');
 const userInput = document.querySelector('input');
 let language;
@@ -62,8 +61,8 @@ else{
 	hideName();
 }
 
-if(langSplits && langSplits[1]){
-	language = langSplits[1];
+if(splits && splits[2]){
+	language = splits[2];
 }
 else{
 	language = 2;
