@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		body{
-			background-image: url('map.jpg');
+			background-image: url('map1.jpg?v=3');
 			background-repeat: no-repeat;
 			background-position: top;
 			background-size: cover;
@@ -22,9 +22,9 @@
 			font-size: 3rem;
 			text-align: center;
 			animation: text-animation 2s infinite linear;
-			background: -webkit-linear-gradient(-90deg, rgba(246,115,10,1) 0%, rgba(255,255,255,1) 52%, rgba(6,198,78,1) 100%);
-		  -webkit-background-clip: text;
-		  -webkit-text-fill-color: transparent;
+			background: -webkit-linear-gradient(-90deg, rgb(234 62 51) 0%, rgb(255 255 255) 33%, rgb(47 99 21) 66%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 
 		#userName{
@@ -56,8 +56,13 @@
 		#shareIcon{
 			left: initial;
 			right:20px;
-			font-size: 50px;
+			font-size: 25px;
 			text-decoration: none;
+			background: #3d731f;
+			color:#fff;
+			border-radius: 5px;
+			padding: 10px;
+			top: 25px;
 		}
 		input{
 			border:none;
@@ -76,8 +81,13 @@
 			bottom: 0;
 			left:0;
 			width: 100%;
-			padding: 15px 0;
+			/* padding: 15px 0; */
 			text-align: center;
+			display: flex;
+		}
+
+		select{
+			font-size: 20px;
 		}
 
 		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -87,14 +97,16 @@
 	</style>
 </head>
 <body>
-<div id="audioIcon" class="fa fa-play-circle" onclick="playAudio(event)"></div>
-<a id="shareIcon" class="fa fa-share-alt" href="whatsapp://send?text=message"></a>
+<div id="audioIcon" class="fa  fa-volume-off" onclick="playAudio(event)"></div>
+<a id="shareIcon" href="whatsapp://send?text=message">SHARE
+	<span class="fa  fa-whatsapp"></span>
+</a>
 <div id="animatedText">
 	<n id="userName"></n>
 	<br>
 	<n id="wishText">wishes you</n>
 	<br>
-	Happy 74th Independence Day
+	<n id="ind">Happy 74th Independence Day</n>
 </div>
 <audio loop autoplay>
   <source src="Jana Gana Mana-flute.mp3" type="audio/mpeg">
@@ -102,9 +114,19 @@ Your browser does not support the audio element.
 </audio>
 <div id="nameContainer">
 	<input placeholder="TYPE YOUR NAME HERE" oninput="setName(event)"/>
+	<select onchange="changeLanguage(event)">
+		<option value="1">हिंदी</option>
+		<option value="2">English</option>
+		<option value="3">বাংলা</option>
+		<option value="4">ଓଡ଼ିଆ</option>
+		<option value="5">मराठी</option>
+		<option value="6">ಕನ್ನಡ</option>
+		<option value="7">தமிழ்</option>
+		<option value="8">తెలుగు</option>
+	</select>
 </div>
 </body>
-<script src="script.js?v=23"></script>
+<script src="script.js?v=30"></script>
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
