@@ -74,11 +74,11 @@ function playAudio(){
 	const audio = document.querySelector('audio');
 	if(audio.paused){
 		audio.play();
-		event.target.className = "fa  fa-volume-up"
+		event.target.innerHTML = "&#128264;"
 	}
 	else{
 		audio.pause();
-		event.target.className = "fa  fa-volume-off"
+		event.target.innerHTML = "&#128263;"
 	}
 }
 
