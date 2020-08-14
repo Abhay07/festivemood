@@ -57,6 +57,9 @@ const url = window.location.href;
 const splits = url.split(/\?name=|&lang=/);
 const languageSelect = document.querySelector('select');
 const userInput = document.querySelector('input');
+const audio = document.querySelector('audio');
+const audioIcon = document.querySelector('#audioIcon');
+
 let language;
 if(splits && splits[1]){
 	const name = decodeURIComponent(splits[1]);
@@ -80,14 +83,20 @@ changeLanguage({target:{value:language}});
 languageSelect.value = language;
 
 function playAudio(){
-	const audio = document.querySelector('audio');
 	if(audio.paused){
 		audio.play();
-		event.target.innerHTML = "&#128264;"
+		audioIcon.innerHTML = "&#128264;"
 	}
 	else{
 		audio.pause();
-		event.target.innerHTML = "&#128263;"
+		audioIcon.innerHTML = "&#128263;"
+	}
+}
+
+function playMusic(){
+	if(audio.currentTime === 0){
+		audio.play();
+		audioIcon.innerHTML = "&#128264;"
 	}
 }
 
