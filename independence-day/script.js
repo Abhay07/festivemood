@@ -9,7 +9,7 @@ const languageJson = {
 		wish:"wishes you",
 		ind:"Happy 74th Indepence Day",
 		msg:"Here's a special wish Independence Day wish from me",
-		type:"TYPE YOUR NAME HERE"
+		type:"Type your name here"
 	},
 	3:{
 		wish:"তোমাকে অভিনন্দন",
