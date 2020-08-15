@@ -120,11 +120,11 @@ function showName(){
 }
 
 function encodeName(t){
-	return t.replace(' ','-');
+	return t.replace(/\s/g,"-");
 }
 
 function decodeName(t){
-	return t.replace('-',' ');
+	return t.replace(/-/g," ");
 }
 
 function changeLanguage(e){
